@@ -1,10 +1,12 @@
 import animefy as anfy
+import hierarchy_builder as hb
 
 def loader(image = ""):
     ANFY = anfy.Animefy()
     ANFY.load_image(image)
-    # thresh = ANFY.threshold()
-    # anfy.display(thresh)
-    print(len(ANFY.getContours()))
+    contours, hierarchy = ANFY.getContours() 
+    H_BUILDER = hb.hierarchy_Tree(hierarchy)
+    root_node = H_BUILDER.retrieve_root()
+    
 
-loader("3.jpg")
+loader("2.jpg")

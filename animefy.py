@@ -10,12 +10,19 @@ class Animefy:
         contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
         # cv.drawContours(self.color_image, contours, -1, (255, 0, 0), 1)
         # display(self.color_image)
+
+        # color = [(0, 0, 255), (102, 255, 102), (255, 0, 0), (0, 255, 255), (255, 255, 102), (152, 51, 255), (51, 51, 153)]
+        # for i in range(len(contours)):
+        #     temp = self.color_image
+        #     cv.drawContours(temp, contours, i, color[i], 3)
+        #     display(temp)
+
         # print(hierarchy)
         # print(contours[0])
         # for e in contours[0]:
         #     print(e, end="")
         # print(hierarchy[1])
-        return contours
+        return contours, hierarchy
 
     def threshold(self):
         blur = cv.medianBlur(self.image_matrix, 5)
