@@ -38,6 +38,7 @@ class Animefy:
             # cv.imshow('{}'.format(raw_image), self.image_matrix)
             # cv.waitKey(0)
             # cv.destroyAllWindows()
+            return self.color_image
         except:
             print("No image found, check again!!")
 

@@ -1,7 +1,8 @@
 class hierarchy_node:
-    def __init__(self, id, childrens) -> None:
+    def __init__(self, id, childrens, pixels = []) -> None:
         self.id = id
         self.childrens = childrens
+        self.pixels = pixels
 
 class hierarchy_Tree:
     def __init__(self, hierarchy) -> None:
@@ -32,9 +33,11 @@ class hierarchy_Tree:
     
     def retrieve_root(self):
         id = 0
+        root_nodes = []
         for _, _, _, parent in self.hierarchy:
             if parent == -1:
-                return self.nodes[id]
+                root_nodes.append(self.nodes[id])
             id += 1
+        return root_nodes
 
 
